@@ -27,14 +27,14 @@ class TranslateApiService extends DeeplBaseService
 
     protected function getUrl(): string
     {
-        return config('deepl.api_url') . '/translate';
+        return config('deepl_const.Translate_API.url');
     }
 
     protected function getHeaders(): array
     {
         return [
             'headers' => [
-                'Authorization' => 'DeepL-Auth-Key ' . config('deepl.api_key'),
+                'Authorization' => 'DeepL-Auth-Key ' . config('deepl_const.Translate_API.auth_key'),
                 'Content-Type' => 'application/json',
             ]
         ];
@@ -46,6 +46,7 @@ class TranslateApiService extends DeeplBaseService
             'json' => [
                 'text' => $this->sentences,
                 'target_lang' => $this->targetLang,
+                'source_lang' => config('deepl_const.Translate_API.source_lang'),
             ]
         ];
     }

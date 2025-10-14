@@ -19,11 +19,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        // 追加：ジム・講師・コースのシーダー呼び出し
         $this->call([
             GymsTableSeeder::class,
             TeachersTableSeeder::class,
             SportCoursesTableSeeder::class,
+            GroupSeeder::class,
+            GradeSeeder::class,
+            ShopSeeder::class,
+            EmployeeSeeder::class,
+            PurchaseSeeder::class,
         ]);
     }
 }

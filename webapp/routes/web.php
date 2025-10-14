@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
-    SportsGym\ListController as SportsGymListController
+    SportsGym\ListController as SportsGymListController,
+    TravelPhraseController 
 };
 
 Route::get('/', function () {
@@ -24,6 +25,20 @@ Route::get('/course/list', [SportsGymListController::class, 'index']);
 Route::get('/course/list/ajax', function () {
     return view('Course.list2');
 });
+
+// TODO: 以下、未実装
 // 講座詳細
 // 講座申し込み POST
 // 完了ページ
+
+/**-------------------------
+ * DeepL 旅行で使えるフレーズ
+ -------------------------*/
+Route::get('travel_phrases', [TravelPhraseController::class, 'index']);
+Route::get('other_sentences', [TravelPhraseController::class, 'otherSentences'])->name('otherSentences');
+Route::get('useful_words', [TravelPhraseController::class, 'usefulWords'])->name('usefulWords');
+
+
+/**-------------------------
+ * 購入システムの利用状況評価
+ -------------------------*/

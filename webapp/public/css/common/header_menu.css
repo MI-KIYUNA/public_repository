@@ -1,0 +1,81 @@
+.site-header {
+  background: #2262a8;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(34,98,168,0.07);
+  width: 100%;
+}
+
+.header-nav {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 60px;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-family: 'Noto Serif JP', 'Noto Serif', serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 2px;
+  white-space: nowrap;
+  margin-right: 32px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Noto Sans JP', 'Noto Sans', sans-serif;
+  font-size: 1rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  display: block;
+}
+
+.nav-list li a:hover {
+  background: #1761a0;
+}
+
+/* スマホレイアウト対応・ヘッダー文字小さめ・間隔狭め */
+@media (max-width: 700px) {
+  .header-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    align-items: flex-start;
+  }
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    font-size: 0.9rem;  /* 小さめに変更 */
+  }
+  .nav-list {
+    gap: 4px;  /* 項目間の間隔を狭く */
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .nav-list li a {
+    font-size: 0.8rem; /* 文字小さめ */
+    padding: 6px 0;    /* 上下だけ余白 */
+    width: 100%;
+    border-radius: 0;
+    max-height: 10px;
+  }
+}

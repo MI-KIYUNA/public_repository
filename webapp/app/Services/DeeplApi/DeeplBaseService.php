@@ -43,30 +43,30 @@ abstract class DeeplBaseService
      * @param array $sentences
      * @param string $targetLang
      */
-    function translate(){
+    function execute(){
         $client = new Client();
         $method = $this->getMethod();
         $url = $this->getUrl();
         $apiName = $this->getApiName();
-        $headers = $this->getHeaders();
-        $requestParams = $this->getRequestParams();
-        $params = [
-            $headers,
-            $requestParams,
-        ];
+
+        // headersとrequestParamsをマージする
+        $options = array_merge(
+            $this->getHeaders(),
+            $this->getRequestParams()
+        );
 
         // リクエストログ
         Log::info($apiName . 'リクエスト', [
             'url' => $url,
             'method' => $method,
-            'params' => $params,
+            'options' => $options,
         ]);
 
         // 実行
         $response = $client->request(
             $method,
             $url,
-            $params
+            $options
         );
 
         // レスポンスログ

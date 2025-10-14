@@ -1,0 +1,211 @@
+/* travel_layout.css */
+/* 全体レイアウト */
+body {
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+    background: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+body p {
+    color: #2d2d2d;
+    line-height: 1.6;
+    font-size: 16px;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 32px;
+    background: #FFFFCC;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.09);
+}
+
+/* タイトル・見出しはNoto Serifでメリハリ */
+h1, h2, h3 {
+    font-family: 'Noto Serif JP', 'Noto Serif', serif;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 32px;
+    color: #2d2d2d;
+}
+
+h2 {
+    margin-top: 32px;
+    color: #FF0000;
+    border-bottom: 2px solid #7b7c7d;
+    padding-bottom: 6px;
+}
+
+h3 {
+    margin: 16px 0 8px;
+    color: #2d2d2d;
+}
+
+/* 各コンテナを縦並び */
+.custom-translation-container,
+.useful-sentence-container,
+.other-phrases-container,
+.frequently-used-words-container {
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: #FFFFCC;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+/* inOutput-fieldの子要素を水平方向に */
+.inOutput-field {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.inOutput-field > div {
+    flex: 1;
+}
+
+.input-area, .output-area {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+#customSentenceInput {
+    min-height: 90px;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+#custom-translation-input {
+    margin-top: 8px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+}
+#custom-translation-result {
+    background-color: #FFFFCC;
+    border: 2px solid #bbb;
+    border-radius: 6px;
+    padding: 12px;
+    min-height: 120px;
+    min-width: 300px;
+    margin-top: 8px;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+/* 入力欄とボタン */
+input[type="text"] {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    width: 80%;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+button {
+    padding: 8px 16px;
+    background: #bbb;
+    color: #7b7c7d;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: auto;
+    max-width: 120px;
+    flex-shrink: 0;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+button:hover {
+    background: #999;
+}
+
+/* セレクトボックス */
+select {
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    max-width: 200px;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+/* テーブルのデザイン */
+#phrasesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: #f5f8fa;
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+#phrasesTable th, #phrasesTable td {
+    font-size: 0.95rem;
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#phrasesTable th {
+    background: #2262a8;
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Noto Serif JP', 'Noto Serif', serif;
+}
+
+#phrasesTable tr:last-child td {
+    border-bottom: none;
+}
+
+.translated {
+    color: #1761a0;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+/* リストのデザイン */
+ul {
+    margin: 0;
+    padding-left: 20px;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+li {
+    padding: 4px 0;
+    font-size: 1rem;
+    color: #444;
+    font-family: 'Noto Sans JP', 'Noto Sans', 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Meiryo', Arial, sans-serif;
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    .wrapper {
+        margin: 2px auto;
+        padding: 10px;
+    }
+    .inOutput-field {
+        flex-direction: column;
+        gap: 16px;
+    }
+    input[type="text"] {
+        width: 100%;
+    }
+    #phrasesTable th, #phrasesTable td {
+        font-size: 0.7rem;
+        padding: 12px 10px;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+    }
+}
